@@ -1,0 +1,7 @@
+{
+  "name": "sasatro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
