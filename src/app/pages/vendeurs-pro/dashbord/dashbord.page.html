@@ -1,0 +1,118 @@
+
+
+
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed" style="background-color: #e3e2e2;">
+
+    <app-sidebar></app-sidebar>
+
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <app-header></app-header>
+      <div class="container-fluid" style="min-height:100vh">
+
+        <div class="mt-5">
+
+            <ion-row>
+              <ion-col size-xs="12" size-sm="12" size-md="9">
+                               <h1 >Bienvenu sur votre tableau de bord</h1>
+              </ion-col>
+            <ion-col size-xs="12" size-sm="12" size-md="3">
+
+            <ion-button id="open-modal">
+              <ion-icon name="add" size="100"></ion-icon>
+               Publier une annonce
+            </ion-button>
+               </ion-col>
+
+            </ion-row>
+
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()" color="warning">annuler</ion-button>
+          </ion-buttons>
+          <ion-title class="ion-text-center">Nouvelle annonce</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true" color="primary">Publier</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+      <form>
+  <div class="form-group">
+    <label for="title">Titre</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Titre" >
+  </div><br>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea type="text" class="form-control" id="description" name="description" rows="5" placeholder="Description" ></textarea>
+  </div><br>
+  <div class="form-group">
+    <label for="price">Prix</label>
+    <input type="text" class="form-control" id="price" name="price" placeholder="Prix">
+  </div><br><br>
+  <ion-button expand="block">Ajouter une photo</ion-button>
+</form>
+
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+          <div class="row mt-5">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card bg-white" style="background-color: hsl(0, 0%, 100%) ">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                 <div class="card-icon">
+                  <ion-icon name="people"></ion-icon>
+                 </div>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Clients</p>
+                <h4 class="mb-0">530</h4>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>par rapport à la semaine passée</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card bg-white" style="background-color: hsl(0, 0%, 100%) ">
+            <div class="card-header p-3 pt-2">
+              <div class="icon icon-lg icon-shape bg-primary shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                 <div class="card-icon">
+                  <ion-icon name="cart"></ion-icon>
+                 </div>
+              </div>
+              <div class="text-end pt-1">
+                <p class="text-sm mb-0 text-capitalize">Ventes</p>
+                <h4 class="mb-0">$53k</h4>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-3">
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>par rapport à la semaine passée</p>
+            </div>
+          </div>
+        </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+
+

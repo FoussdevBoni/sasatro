@@ -1,0 +1,54 @@
+ <ion-list class="menu-list">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <ion-title>Acheteurs pro</ion-title>
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ion-item lines="none">
+                  Programmes pour les professionnels
+                </ion-item>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <ion-title>Vendeurs</ion-title>
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ion-item lines="none">
+                  Devenir un vendeur
+                </ion-item>
+                <ion-item lines="none">
+                  Connexion vendeur
+                </ion-item>
+                <ion-item lines="none">
+                  Repertoire des vendeur
+                </ion-item>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" aria-expanded="true" aria-controls="collapseThree">
+                <ion-title>Nos rayons</ion-title>
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ion-item *ngFor="let category of categoriesServices.categories">
+                  <ion-label>
+                    {{category.name}}
+                  </ion-label>
+                </ion-item>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-list>

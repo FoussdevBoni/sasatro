@@ -1,3 +1,35 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <app-header1></app-header1>
+
+  <div class="custom-panel" [class.open]="isPanelOpen" (click)="togglePanel(false)">
+    <div class="panel-menu">
+      <app-menu></app-menu>
+    </div>
+  </div>
+  
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  <ion-tabs>
+    <div class="mobile-header" *ngIf="globalPropsService.currentProfile==='buyer'">
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home" (click)="togglePanel(true)">
+          <ion-icon name="menu"></ion-icon>
+          menu
+        </ion-tab-button>
+        <ion-tab-button routerLink="/profile-acheteur">
+          <ion-icon name="person"></ion-icon>
+          Profile
+        </ion-tab-button>
+        <ion-tab-button tab="library">
+          <ion-icon name="heart"></ion-icon>
+          Favoris
+        </ion-tab-button>
+        <ion-tab-button tab="search" routerLink="/mon-panier">
+          <ion-icon name="bag-handle"></ion-icon>
+          Panier
+        </ion-tab-button>
+      </ion-tab-bar>
+    </div>
+  </ion-tabs>
 </ion-app>

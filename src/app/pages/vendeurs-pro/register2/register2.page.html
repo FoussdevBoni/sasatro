@@ -1,0 +1,54 @@
+
+
+
+
+
+<ion-content [fullscreen]="true">
+   <section id="contact" class="contact" >
+        <div class="container">
+
+            <form  method="post" role="form" class="php-email-form">
+                <div class="row">
+            <div class="col-md-12">
+                <h1>Sasatro</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="lead">Avez-vous déjà un SIREN ?</p>
+            </div>
+        </div>
+        <div class="inputs-code">
+          <input  [(ngModel)]="champ1" (ngModelChange)="focusNext1($event, champ2Input)" name="champ1" max="9" min="0" type="number" id="champ1">
+
+          <input #champ2Input type="text" [(ngModel)]="champ2" (ngModelChange)="focusNext2($event, champ3Input)" name="champ2" id="champ2">
+
+          <input #champ3Input type="text" [(ngModel)]="champ3" (ngModelChange)="focusNext3($event, champ4Input)" id="champ3" name="champ3">
+
+          <input #champ4Input type="text" [(ngModel)]="champ4" (ngModelChange)="focusNext4($event, champ5Input)" id="champ4" name="champ4">
+
+          <input #champ5Input type="text" [(ngModel)]="champ5" (ngModelChange)="focusNext5($event, champ6Input)" id="champ5" name="champ5">
+          <input #champ6Input type="text" [(ngModel)]="champ6" (ngModelChange)="focusNext6($event, champ7Input)" id="champ6" name="champ6">
+          <input #champ7Input type="text" [(ngModel)]="champ7" (ngModelChange)="focusNext7($event, champ8Input)" id="champ7" name="champ7">
+          <input #champ8Input type="text" [(ngModel)]="champ8" id="champ8" name="champ8" (ngModelChange)="focusNext8($event, champ8Input)">
+
+
+        </div>
+        <br><br>
+                <div class="text-center">
+                    <ion-button (click)="registerService.register()">
+                        Déverouiller le prix de gros
+                    </ion-button>
+                </div>
+                <br><br>
+                <a href="#" class="text-center">Je n'ai pas encore de SIREN</a>
+                <br><br>
+                <span  class="text-center">
+                    (Seuls les prix de vente conseillée seront affichés)
+                </span>
+              
+            </form>
+        </div>
+    </section>
+
+</ion-content>

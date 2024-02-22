@@ -1,0 +1,10 @@
+ <br>
+<h2 class="">Ces produits sont recommandés pour vous</h2>
+ <div class="product-list">
+  <app-product-item *ngFor="let product of recommendedProducts" [product]="product"     (productSelected)="onProductSelected($event)"
+></app-product-item>
+</div>
+
+
+
+

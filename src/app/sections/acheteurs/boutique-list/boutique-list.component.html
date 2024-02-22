@@ -1,0 +1,9 @@
+ <br>
+<h2 class="">Découvrez les meilleurs vendeurs de Sasatro</h2>
+ <div class="product-list">
+  <app-boutique-item *ngFor="let boutique of recommendedShops" [boutique]="boutique"     (productSelected)="onProductSelected($event)"
+></app-boutique-item>
+</div>
+
+
+

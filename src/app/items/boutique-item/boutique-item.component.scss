@@ -1,0 +1,43 @@
+ ion-card {
+
+  ion-label{
+    margin-left: 12px;
+  }
+
+   flex: 0 0 auto;
+   margin-right: 16px;
+   width: 300px;
+   padding: 8px;
+   border-radius: 8px;
+
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   -ms-border-radius: 8px;
+   -o-border-radius: 8px;
+
+
+   p {
+     font-size: 18px;
+     padding: 8px;
+     display: block;
+     white-space: pre-line;
+
+   }
+
+   .star-icon {
+     color: gold;
+   }
+
+   .price-comparison {
+     text-decoration: line-through;
+     color: black;
+     font-size: 16px;
+   }
+
+   .actual-price {
+     font-size: 20px;
+     color: brown;
+     font-weight: 900;
+   }
+ }
+

@@ -1,0 +1,37 @@
+ <!-- Sidebar Start -->
+<aside class="left-sidebar bg-dark">
+  <!-- Sidebar scroll-->
+  <div>
+    <div class="brand-logo d-flex align-items-center justify-content-between border-slate-900" style="border-bottom: 0.4px solid rgb(73, 71, 71);">
+      <h1 class="text-nowrap logo-img text-white">
+       Sasatro
+      </h1>
+      <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+        <ion-icon name="notification" size="100"></ion-icon>
+      </div>
+    </div>
+    <!-- Sidebar navigation-->
+    <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+
+      <ul id="sidebarnav">
+        <li class="sidebar-item" *ngFor="let link of links" (click)="navigate(link.path)"  [ngStyle]="{'background-color': link.path===active ? link.color : ''}">
+          <a class="sidebar-link" aria-expanded="false">
+            <span>
+               <ion-icon [name]="link.icon" size="150"></ion-icon>
+            </span>
+            <span class="hide-menu">
+              {{link.label}}
+            </span>
+          </a>
+        </li>
+
+
+      </ul>
+
+
+    </nav>
+    <!-- End Sidebar navigation -->
+  </div>
+  <!-- End Sidebar scroll-->
+</aside>
+<!--  Sidebar End -->

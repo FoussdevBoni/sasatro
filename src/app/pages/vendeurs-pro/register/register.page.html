@@ -1,0 +1,95 @@
+<ion-content>
+    <section id="contact" class="contact" style="overflow-y: scroll ;min-height:100vh">
+        <div class="container">
+
+            <form [formGroup]="registerService.monFormulaire" (ngSubmit)="registerService.onSubmit()" class="php-email-form">
+               <h1 style="text-align: center;">Créer un compte</h1><br>
+
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <input formControlName="fisrtname" type="text" name="fisrtname" class="form-control" placeholder="Prénom" required />
+    </div>
+    <div class="col-md-6 form-group">
+      <input formControlName="lastname" type="text" name="lastname" class="form-control" placeholder="Nom" required />
+    </div>
+     <div class="col-md-6 form-group">
+      <input formControlName="email" type="text" name="email" class="form-control" placeholder="Votre adresse mail" required />
+    </div>
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <input formControlName="password" type="password" class="form-control" placeholder="Créer un mot de passe" required />
+    </div>
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <select formControlName="activity" class="form-control" placeholder="Activité du magazin" required >
+        <option value="">Choisir une catégorie</option>
+        <option [value]="category.name" *ngFor="let category of categoriesService.categories">
+          {{category.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <select formControlName="country" class="form-control" placeholder="" required (ngModelChange)="getCountry($event)">
+       <option value="">Selectionner votre pays</option>
+       <option [value]="country.nom" *ngFor="let country of countriesService.countries">
+        {{country.nom}}
+       </option>
+      </select>
+    </div>
+
+
+
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+     <div class="input-group">
+             <div style="border: 0.5px solid rgb(212, 207, 207);">
+                <div class="" style="padding: 8px; margin-top: 2px" >
+                  {{registerService.countryPhoneCode}}
+                </div>
+        </div>
+                 <input type="tel" class="form-control" id="phone" placeholder="Entrez votre numéro de téléphone" formControlName="phone" required [maxlength]="registerService.countryPhoneSize" minlength="countryPhoneSize">
+
+        </div>
+    </div>
+
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <input formControlName="companyName" type="text" class="form-control" placeholder="Nom de l'entreprise" required=""/>
+    </div>
+
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <input formControlName="shopName" type="text" class="form-control" placeholder="Nom de la boutique" required=""/>
+    </div>
+
+    <div class="col-md-6 form-group mt-3 mt-md-0">
+      <input formControlName="adresse" type="text" class="form-control" placeholder="Adresse"required="" />
+    </div>
+
+    <div class="col-md-12 form-group">
+      <label>Quel type de commerçant êtes-vous ?</label><br>
+      <div class="form-check input-radio">
+        <input formControlName="typeCommercant" type="radio" id="commercantOuvert" value="commercantOuvert">
+        <label class="form-check-label" for="commercantOuvert">Mon commerce ou mon e-commerce est déjà ouvert</label>
+      </div>
+      <div class="form-check input-radio">
+        <input formControlName="typeCommercant" type="radio" id="projetOuverture" value="projetOuverture">
+        <label class="form-check-label" for="projetOuverture">J'ai un projet d'ouverture du commerce physique et en ligne</label>
+      </div>
+    </div>
+
+    <div class="col-md-12 text-center">
+      <button class="btn btn-primary" type="submit">Suivant</button>
+    </div>
+  </div>
+     <div>
+          <span>Avez-vous un compte vendeur  ?  <a class="text-primary cursor-pointer" (click)="navigate('/vendeurs/login')">
+        Connectez-vous
+      </a></span>
+       </div>
+         <div>
+          <span><a class="text-primary cursor-pointer" (click)="navigate('/register')">
+            Créer un compte client
+      </a></span>
+       </div>
+</form>
+
+        </div>
+    </section>
+</ion-content>

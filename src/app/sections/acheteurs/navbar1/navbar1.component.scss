@@ -1,0 +1,151 @@
+.top-nav {
+  margin-top: 100px;
+}
+
+
+
+.top-nav ul {
+  display: flex;
+  overflow-x: auto;
+  flex-direction: row;
+
+  li {
+    flex: 0 0 auto;
+    max-width: 150px;
+    padding: 8px;
+    border-radius: 28px;
+    list-style-type: none;
+    margin-right: 16px;
+    padding: 10px;
+    background-color: rgb(72, 70, 70);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+  }
+
+  li a {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  ion-card {
+    flex: 0 0 auto;
+    margin-right: 16px;
+    width: 300px;
+    padding: 8px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+  }
+}
+
+.menu-btn {
+  display: flex;
+}
+
+.menu-icon {
+  margin-top: -2px;
+  margin-right: 2px;
+
+  ion-icon {
+    font-size: 20px;
+  }
+}
+
+.custom-scroll {
+  overflow-x: hidden !important;
+}
+
+.scroll-buttons {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  margin-top: -15px;
+}
+
+.scroll-buttons ion-button {
+  margin-right: 10px;
+  display: none;
+  background-color: transparent;
+}
+
+.top-nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+
+#main-nav-toolbar {
+  display: none;
+}
+
+.mobile-header {
+  display: block;
+}
+
+@media (min-width: 480px) {
+  .mobile-header {
+    display: block;
+  }
+
+  #main-nav-toolbar {
+
+    display: none;
+  }
+}
+
+@media (min-width: 570px) {
+  .mobile-header {
+    display: block;
+  }
+
+  #main-nav-toolbar {
+    display: none;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .mobile-header {
+    display: block;
+  }
+
+  #main-nav-toolbar {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-header {
+    display: none;
+  }
+
+  #main-nav-toolbar {
+    display: block;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .mobile-header {
+    display: none;
+  }
+
+  #main-nav-toolbar {
+    display: block;
+  }
+}
+
+@media (min-width: 1400px) {
+  .mobile-header {
+    display: none;
+  }
+
+  #main-nav-toolbar {
+    display: block;
+  }
+}

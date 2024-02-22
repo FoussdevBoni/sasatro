@@ -1,0 +1,19 @@
+ <ion-card (click)="onProductClick()">
+      <img [src]="product.image" class="d-block w-100" alt="Product Image">
+      <ion-card-content>
+        <ion-note>{{ product.title }}</ion-note>
+        <br>
+        <span class="rating">
+          <ion-icon name="star" class="star-icon" *ngFor="let star of [1, 2, 3, 4, 5]"></ion-icon>
+        </span>
+        <span style="margin-left: 5px; opacity: 0.3">{{ product.reviews }} avis</span>
+        <div>
+          <span class="price-comparison">{{ product.comparisonPrice }}</span>
+          <span style="opacity: 0.4; margin-left: 10px">Prix de comparaison</span>
+        </div>
+        <p class="actual-price">{{ product.actualPrice }}</p>
+      </ion-card-content>
+</ion-card>
+
+
+

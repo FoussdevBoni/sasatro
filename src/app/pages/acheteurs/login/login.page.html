@@ -1,0 +1,42 @@
+
+
+<ion-content [fullscreen]="true">
+ <section id="contact" class="contact" style="overflow-y: scroll ;min-height:100vh" >
+        <div class="container centered">
+
+            <form method="post" role="form" class="php-email-form " id="login-form" >
+                <h1 style="text-align: center;">Connectez-vous à votre compte</h1><br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input type="email" name="email" class="form-control" id="email"
+                            placeholder="Saissisez votre adresse mail" required [(ngModel)]="email"/>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Saissir votre mot de passe"
+                            required [(ngModel)]="password"/>
+                    </div><br>
+
+                    <a class="text-primary cursor-pointer" (click)="navigate('/resetpassword')">Mot de passe oublié ?</a>
+                </div><br><br>
+
+                <div class="text-center">
+
+                    <button type="button" class="btn btn-primary" (click)="login()">Se connecter</button>
+                </div>
+                <a href=""></a>
+            </form>
+            <br>
+             <div>
+          <span>Vous n'avez paqs un compte  ?  <a class="text-primary cursor-pointer" (click)="navigate('/register')">
+        Inscrivez-vous
+      </a></span>
+       </div>
+         <div>
+          <span><a class="text-primary cursor-pointer" (click)="navigate('vendeurs/login')">
+            Se connecter à un compte vendeur
+      </a></span>
+       </div>
+        </div>
+    </section>
+
+</ion-content>

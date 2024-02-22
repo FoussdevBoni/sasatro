@@ -1,0 +1,166 @@
+<ion-content>
+
+
+
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+
+    <app-sidebar active="#01b1d7"></app-sidebar>
+
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <app-header></app-header>
+      <div class="container-fluid " style="background-color: #0000;min-height:100vh ; overflow-y: auto">
+
+        <div>
+          <div class="body-content">
+        <h1>Mes articles
+
+          ({{products.length}})
+        </h1>
+        <ion-card>
+        <ion-card-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button  id="open-modal">
+            Filtrer vos article
+          </ion-button>
+
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button  id="new-article-modal" color="primary" >
+            <ion-icon name="add" size="80"></ion-icon>
+            Nouveau produit
+          </ion-button>
+
+        </ion-buttons>
+      </ion-toolbar>
+
+        </ion-card-header>
+
+        <!-- Tableau Bootstrap -->
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Catégorie</th>
+                <th>Quantité disponible</th>
+                <th>Prix</th>
+                <th>Statut</th>
+                <th>Date de publication</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Utilisez *ngFor pour itérer sur vos données -->
+              <tr *ngFor="let product of filteredProducts">
+                <td>
+                  <img [src]="product.productPicture" alt=""
+                  class="product-pic"
+                  >
+                </td>
+                <td>{{ product.productName }}</td>
+                <td>{{ product.productCategory }}</td>
+                <td>{{ product.productQuantity }}</td>
+                <td>{{ product.productPrice }}</td>
+                <td>Indisponible</td>
+                <td>{{ product.date }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ion-card>
+      </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+ <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Filtrer par catégorie</ion-label>
+        <ion-select [(ngModel)]="selectedCategory" (ionChange)="cancel()">
+          <ion-select-option>Catégorie 1</ion-select-option>
+          <ion-select-option>Catégorie 2</ion-select-option>
+          <!-- Ajoutez d'autres catégories ici -->
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Filtrer par statut</ion-label>
+        <ion-select [(ngModel)]="selectedStatus">
+          <ion-select-option>Disponible</ion-select-option>
+          <ion-select-option>Indisponible</ion-select-option>
+          <!-- Ajoutez d'autres statuts ici -->
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  </ng-template>
+</ion-modal>
+
+
+ <ion-modal trigger="new-article-modal" (willDismiss)="onWillDismiss($event)" *ngIf="openForm">
+     <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()" color="warning">annuler</ion-button>
+          </ion-buttons>
+          <ion-title class="ion-text-center">Nouvelle annonce</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true" color="primary">Publier</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+      <form>
+  <div class="form-group">
+    <label for="title">Nom du produit</label>
+    <input type="text" class="form-control" id="productName" name="productName" placeholder="Nom du produit" [(ngModel)]="formData.productName">
+  </div><br>
+  <div class="form-group">
+    <label for="title">La catégorie du produit</label>
+    <input type="text" class="form-control" id="productCategory" name="productName" placeholder="Nom du produit" [(ngModel)]="formData.productCategory">
+  </div><br>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea type="text" class="form-control" id="productDescription" name="productDescription" rows="5" placeholder="Description du produit"
+    [(ngModel)]="formData.productDescription"
+    ></textarea>
+  </div><br>
+  <div class="form-group">
+    <label for="price">Prix</label>
+    <input type="text" class="form-control" id="productPrice" name="productPrice" placeholder="Prix" [(ngModel)]="formData.productPrice">
+  </div><br><br>
+   <div class="form-group">
+    <label for="price">La quantité disponible</label>
+    <input type="text" class="form-control" id="productQuantity" name="productQuantity" placeholder="La quantité disponible" [(ngModel)]="formData.productQuantity">
+  </div><br><br>
+   <div class="form-group">
+    <label for="product-pic">Ajouter au moins  une photo du produit</label>
+    <input type="file" class="form-control" id="product-pic" name="product-pic" placeholder="Ajouter une phone" (change)="fireStorageService.upload($event  , 'products/profile.webp')">
+  </div><br><br>
+  <ion-button expand="block" (click)="publishProduct()">Publier le produit</ion-button>
+</form>
+
+      </ion-content>
+    </ng-template>
+</ion-modal>
+
+</ion-content>
+
+<app-bottom-bar></app-bottom-bar>

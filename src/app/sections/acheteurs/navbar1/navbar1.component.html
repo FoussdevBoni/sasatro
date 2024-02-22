@@ -1,0 +1,61 @@
+
+  <ion-toolbar color="dark" class="top-nav-toolbar">
+   <div>
+     <div class="top-nav">
+       <ul>
+
+          <li class="link-btn menu-btn" >
+            <span class="menu-icon">
+            <ion-icon name="menu" size="100"></ion-icon>
+            </span>
+            <a href="">Tous les rayons</a>
+          </li>
+           <li class="link-btn">
+            <a href="">Soldes</a>
+          </li>
+           <li class="link-btn">
+            <a href="">Voyages</a>
+          </li>
+           <li class="link-btn">
+            <a href="">Forfaits</a>
+          </li>
+           <li class="link-btn">
+            <a href="">Made in France</a>
+          </li>
+           <li class="link-btn">
+            <a href="">Seconde vie</a>
+          </li>
+           <li class="link-btn">
+            <a href="">Billéterie</a>
+          </li>
+           <li class="link-btn">
+            <a href="">Mes course</a>
+          </li>
+           <li class="link-btn">
+            <a href="">Carte cdiscount</a>
+          </li>
+          <li class="link-btn">
+            <a href="">Coup de pouce</a>
+          </li>
+       </ul>
+     </div>
+   </div>
+
+   </ion-toolbar>
+   <ion-toolbar color="dark" id="main-nav-toolbar" class="mobile-header">
+      <div class="scroll-buttons">
+    <ion-button (click)="scrollSegment(-1)">
+      <ion-icon name="chevron-back"></ion-icon>
+    </ion-button>
+
+    <ion-segment scrollable class="custom-scroll">
+      <ion-segment-button *ngFor="let category of categories" [value]="category.route">
+        {{ category.name }}
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-button (click)="scrollSegment(1)" >
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-button>
+  </div>
+   </ion-toolbar>

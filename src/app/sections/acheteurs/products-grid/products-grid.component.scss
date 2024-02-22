@@ -1,0 +1,42 @@
+h2 {
+  margin-left: 15px;
+  color: rgb(121, 119, 119);
+}
+
+.card-with-avatar {
+  position: relative;
+}
+
+.absolute-avatar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -10px;
+  transform: translateX(-50%);
+  background-color: blue;
+  padding: 8px;
+  color: white;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+
+.absolute-avatar .text {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 18px;
+
+  b {
+    font-weight: 900;
+    font-size: 20px;
+  }
+}

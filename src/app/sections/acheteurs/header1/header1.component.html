@@ -1,0 +1,35 @@
+<ion-header [translucent]="true" class="flat-header desktop-header" *ngIf="globalPropsService.currentProfile==='buyer'">
+    <ion-toolbar color="dark">
+      <div style="display: flex;" class="header-main">
+        <div class="header-logo">Sasatro</div>
+        <div class="header-search-container">
+          <input type="search" name="search" class="search-field" placeholder="Que cherchez-vous ?...">
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
+        <div class="header-user-actions">
+          <a class="action-btn" routerLink="/profile-acheteur">
+            <ion-icon name="person-outline"></ion-icon>
+          </a>
+          <a class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </a>
+          <a class="action-btn" routerLink="/mon-panier">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </a>
+        </div>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-header [translucent]="true" class="flat-header mobile-header" *ngIf="globalPropsService.currentProfile==='buyer'">
+    <ion-toolbar color="dark">
+      <div class="header-logo" style="text-align: center;">Sasatro</div>
+      <div style="padding: 5px;">
+        <ion-searchbar placeholder="Que cherchez-vous ?...."></ion-searchbar>
+      </div>
+    </ion-toolbar>
+  </ion-header>
